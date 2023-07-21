@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;800&family=Montserrat:wght@100;500&display=swap"
+    rel="stylesheet">
+  <title>Frontend Mentor | Product preview card component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .mont {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .fraun {
+      font-family: 'Fraunces', serif;
+
+    }
+  </style>
+</head>
+
+<body class="bg-orange-50">
+  <div class="sm:flex m-4 ">
+    <img src="./images/image-product-mobile.jpg" class="rounded-t-lg block sm:hidden">
+    <img src="./images/image-product-desktop.jpg" class="object-contain w-96 rounded-l-lg hidden sm:block ">
+    <div class="bg-white p-6 rounded-b-lg">
+      <div class="text-xs mont text-slate-500">P E R F U M E</div>
+      <div class="fraun text-3xl font-extrabold py-8">Gabrielle Essence Eau De Parfum</div>
+      <div class="mont text-sm/8 pb-4 text-slate-500">A floral, solar and voluptuous interpretation
+        composed
+        by Olivier
+        Polge,
+        Perfumer-Creator for
+        the house of
+        CHANEL.</div>
+      <div class="flex items-center gap-4">
+        <div class="inline fraun text-green-800 text-3xl py-4 ">$149.99</div>
+        <div class="inline text-slate-500 text-sm line-through">$169.99</div>
+      </div>
+      <div class="rounded-lg bg-green-800 text-white flex justify-center p-4 my-4">
+        <img src="./images/icon-cart.svg" class="inline px-2">
+        Add to Cart
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Botskiedoodle</a>.
+  </div>
+</body>
+
+</html>
