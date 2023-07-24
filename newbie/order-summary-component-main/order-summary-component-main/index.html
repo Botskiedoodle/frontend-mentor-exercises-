@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body class="flex justify-center bg-slate-200">
+  <div class="flex flex-col justify-center m-8 w-80 bg-white rounded-2xl">
+    <img src="images/illustration-hero.svg" class="rounded-t-2xl ">
+    <div class="flex flex-col justify-center items-center">
+      <h1 class="text-xl font-bold my-4">
+        Order Summary
+      </h1>
+      <p class="text-center px-6 text-slate-500 text-sm/2 mt-2">
+        You can now listen to millions of songs, audiobooks, and podcasts on any
+        device anywhere you like!
+      </p>
+      <div class="flex rounded-xl bg-slate-100 p-4 gap-4 my-6">
+        <img src="./images/icon-music.svg">
+        <div class="flex flex-col pr-8 text-sm self-center">
+          <span class="font-bold">Annual Plan</span>
+          <span class="text-slate-500">$59.99/year</span>
+        </div>
+        <div class="self-center text-xs font-extrabold text-blue-700 underline underline-offset-2">Change</div>
+      </div>
+      <div class="bg-blue-700 rounded-xl p-3 px-16 drop-shadow-2xl">
+        <div class="text-white font-semibold text-sm">Proceed to Payment</div>
+      </div>
+      <div class="my-4 mb-8 text-sm font-bold text-slate-500">
+        Cancel Order
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
