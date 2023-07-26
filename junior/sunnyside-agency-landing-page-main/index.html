@@ -31,6 +31,15 @@
     .barlow {
       font-family: 'Barlow', sans-serif;
     }
+
+    #modal {
+      /* Make the modal overlay full-screen */
+      z-index: 9999;
+    }
+
+    #modal>div {
+      /* Your styles for the modal container */
+    }
   </style>
 </head>
 
@@ -45,7 +54,7 @@
         <div class="absolute top-0 left-0 w-full h-full">
           <div class="flex justify-between p-6">
             <div class="barlow text-white text-2xl font-black">sunnyside</div>
-            <img src="./images/icon-hamburger.svg" class="lg:hidden">
+            <img src="./images/icon-hamburger.svg" class="lg:hidden hamburger-icon">
             <div class="hidden lg:flex lg:gap-12 lg:items-center">
               <div class="text-white barlow">About</div>
               <div class="text-white barlow">Services</div>
@@ -59,7 +68,18 @@
           <img src="./images/icon-arrow-down.svg" class="m-auto py-12 lg:py-16">
         </div>
       </div>
+
+      <!-- Modal Container -->
+      <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-8 mx-auto my-20 w-80 text-center">
+          <div class="barlow py-3 text-zinc-600 font-semibold">About</div>
+          <div class="barlow py-3 text-zinc-600 font-semibold">Services</div>
+          <div class="barlow py-3 text-zinc-600 font-semibold">Projects</div>
+          <button id="closeModalBtn" class="bg-yellow-400 px-6 py-3 mt-4 rounded-full fraunces">CONTACT</button>
+        </div>
+      </div>
   </div>
+
   </header>
 
   <!-- body section -->
@@ -225,6 +245,32 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Botskiedoodle</a>.
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const modal = document.getElementById('modal');
+      const hamburgerIcon = document.querySelector('.hamburger-icon');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+
+      hamburgerIcon.addEventListener('click', function (event) {
+        event.stopPropagation(); // Prevent click event from propagating to the document
+        modal.classList.remove('hidden');
+      });
+
+      closeModalBtn.addEventListener('click', function () {
+        modal.classList.add('hidden');
+      });
+
+      // Close the modal when the user clicks outside of it
+      document.addEventListener('click', function (event) {
+        if (!modal.contains(event.target) && event.target !== hamburgerIcon) {
+          modal.classList.add('hidden');
+        }
+      });
+    });
+
+
+
+  </script>
 </body>
 
 </html>
