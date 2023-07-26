@@ -39,79 +39,98 @@
     <!-- header -->
     <header class="grid">
       <div class="relative">
-        <img src="./images/mobile/image-header.jpg" class="w-full h-auto">
+        <img src="./images/mobile/image-header.jpg" class="w-full h-auto md:hidden">
+        <img src="./images/desktop/image-header.jpg" class="w-full h-auto hidden md:block">
+
         <div class="absolute top-0 left-0 w-full h-full">
           <div class="flex justify-between p-6">
             <div class="barlow text-white text-2xl font-black">sunnyside</div>
-            <img src="./images/icon-hamburger.svg">
+            <img src="./images/icon-hamburger.svg" class="lg:hidden">
+            <div class="hidden lg:flex lg:gap-12 lg:items-center">
+              <div class="text-white barlow">About</div>
+              <div class="text-white barlow">Services</div>
+              <div class="text-white barlow">Projects</div>
+              <div class="bg-white fraunces rounded-full px-4 py-2">Contact</div>
+            </div>
           </div>
-          <div class="fraunces font-black text-white text-3xl text-center tracking-[.4em] py-12">
+          <div class="fraunces font-black text-white text-4xl text-center tracking-[.2em] py-16 lg:text-6xl lg:mt-8">
             WE ARE CREATIVES
           </div>
-          <img src="./images/icon-arrow-down.svg" class="m-auto">
+          <img src="./images/icon-arrow-down.svg" class="m-auto py-12 lg:py-16">
         </div>
       </div>
   </div>
   </header>
 
   <!-- body section -->
-  <section>
-    <img src="./images/mobile/image-transform.jpg" class="w-screen">
-  </section>
-  <section class="text-center px-6">
-    <div class="fraunces text-4xl tracking-wide py-8 font-black">Transform your brand</div>
-    <div class="barlow font-normal text-base/8">
-      We are full-service creative agency specializing in helping brands grow fast.
-      Engage your clients through compelling visuals that do most of the marketing for you.
-    </div>
-    <div class="py-12 fraunces tracking-wide font-black">
-      LEARN MORE
-    </div>
-  </section>
-  <section>
-    <img src="./images/mobile/image-stand-out.jpg" class="w-screen">
-  </section>
-  <section class="text-center px-6">
-    <div class="fraunces text-4xl tracking-wide py-8 font-black">Stand out to the right audience</div>
-    <div class="barlow font-normal text-base/8">
-      Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll
-      build and extend your brand in digital places.
-    </div>
-    <div class="py-12 fraunces tracking-wide font-black">
-      LEARN MORE
-    </div>
-  </section>
-  <!-- Graphic Design -->
-  <section class="grid">
-    <div class="relative">
-      <img src="./images/mobile/image-graphic-design.jpg" class="w-full h-auto">
-      <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-end items-center pb-16">
-        <div class="fraunces font-black text-2xl text-center py-8">Graphic Design</div>
-        <div class="barlow font-semibold text-base/8 text-center px-4">
-          Great design makes you memorable. We deliver artwork that underscores your brand message and captures
-          potential
-          clients’ attention.
+  <div class="grid lg:grid-cols-2">
+    <section class="text-center px-6 lg:text-left lg:flex lg:flex-col lg:justify-center lg:px-28 order-2 lg:order-1">
+      <div class="fraunces text-4xl tracking-wide py-8 font-black">Transform your brand</div>
+      <div class="barlow font-normal text-base/8">
+        We are full-service creative agency specializing in helping brands grow fast.
+        Engage your clients through compelling visuals that do most of the marketing for you.
+      </div>
+      <div class="py-12 fraunces tracking-wide font-black">
+        LEARN MORE
+      </div>
+    </section>
+    <section class="order-1 lg:order-2">
+      <img src="./images/mobile/image-transform.jpg" class="w-full lg:hidden">
+      <img src="./images/desktop/image-transform.jpg" class="w-full hidden lg:block">
+    </section>
+
+    <section class="order-3">
+      <img src="./images/mobile/image-stand-out.jpg" class="w-full lg:hidden">
+      <img src="./images/mobile/image-stand-out.jpg" class="w-full hidden lg:block">
+
+    </section>
+    <section class="text-center px-6 lg:text-left lg:text-left lg:flex lg:flex-col lg:justify-center lg:px-28 order-4">
+      <div class="fraunces text-4xl tracking-wide py-8 font-black">Stand out to the right audience</div>
+      <div class="barlow font-normal text-base/8">
+        Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll
+        build and extend your brand in digital places.
+      </div>
+      <div class="py-12 fraunces tracking-wide font-black">
+        LEARN MORE
+      </div>
+    </section>
+    <!-- Graphic Design -->
+    <section class="grid order-5">
+      <div class="relative">
+        <img src="./images/mobile/image-graphic-design.jpg" class="w-full h-auto lg:hidden">
+        <img src="./images/desktop/image-graphic-design.jpg" class="w-full h-auto hidden lg:block">
+
+        <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-end items-center pb-16">
+          <div class="fraunces font-black text-2xl text-center py-8">Graphic Design</div>
+          <div class="barlow font-semibold text-base/8 text-center px-4  lg:mx-16">
+            Great design makes you memorable. We deliver artwork that underscores your brand message and captures
+            potential
+            clients’ attention.
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Photography -->
-  <section class="grid">
-    <div class="relative">
-      <img src="./images/mobile/image-photography.jpg" class="w-full h-auto">
-      <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-end items-center pb-16">
-        <div class="fraunces font-black text-2xl text-center py-8">Photography</div>
-        <div class="barlow font-semibold text-base/8 text-center px-4">
-          Increase your credibility by getting the most stunning, high-quality photos that improve your business
-          image.
+    </section>
+    <!-- Photography -->
+    <section class="grid order-6">
+      <div class="relative">
+        <img src="./images/mobile/image-photography.jpg" class="w-full h-auto lg:hidden">
+        <img src="./images/desktop/image-photography.jpg" class="w-full h-auto hidden lg:block">
+
+        <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-end items-center pb-16">
+          <div class="fraunces font-black text-2xl text-center py-8">Photography</div>
+          <div class="barlow font-semibold text-base/8 text-center px-4 lg:mx-16">
+            Increase your credibility by getting the most stunning, high-quality photos that improve your business
+            image.
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
+
   <!-- Client testimonials -->
   <section class="text-center flex flex-col py-8">
-    <div class="fraunces tracking-[.4em] text-zinc-400 text-sm">CLIENT TESTIMONIALS</div>
-    <div class="md:flex md:mx-16">
+    <div class="fraunces tracking-[.4em] text-zinc-400 text-sm py-8">CLIENT TESTIMONIALS</div>
+    <div class="lg:flex lg:mx-32 lg:pb-16">
       <div class="flex flex-col items-center">
         <div class="w-[4em] pt-12">
           <img src="./images/image-emily.jpg" class="rounded-full" alt="Emily">
@@ -164,16 +183,24 @@
   <!-- Footer -->
   <div class="grid grid-cols-2 md:grid-cols-4">
     <div>
-      <img src="./images/mobile/image-gallery-milkbottles.jpg" class="w-full h-auto">
+      <img src="./images/mobile/image-gallery-milkbottles.jpg" class="w-full h-auto md:hidden">
+      <img src="./images/desktop/image-gallery-milkbottles.jpg" class="w-full h-auto hidden md:block">
+
     </div>
     <div>
-      <img src="./images/mobile/image-gallery-orange.jpg" class="w-full h-auto">
+      <img src="./images/mobile/image-gallery-orange.jpg" class="w-full h-auto md:hidden">
+      <img src="./images/desktop/image-gallery-orange.jpg" class="w-full h-auto hidden md:block">
+
     </div>
     <div>
-      <img src="./images/mobile/image-gallery-cone.jpg" class="w-full h-auto">
+      <img src="./images/mobile/image-gallery-cone.jpg" class="w-full h-auto md:hidden">
+      <img src="./images/desktop/image-gallery-cone.jpg" class="w-full h-auto hidden md:block">
+
     </div>
     <div>
-      <img src="./images/mobile/image-gallery-sugar-cubes.jpg" class="w-full h-auto">
+      <img src="./images/mobile/image-gallery-sugar-cubes.jpg" class="w-full h-auto md:hidden">
+      <img src="./images/desktop/image-gallery-sugarcubes.jpg" class="w-full h-auto hidden md:block">
+
     </div>
   </div>
   <div class="bg-emerald-300 flex flex-col items-center justify-center">
@@ -196,7 +223,7 @@
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Botskiedoodle</a>.
   </div>
 </body>
 
