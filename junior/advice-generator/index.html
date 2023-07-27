@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .manrope {
+      font-family: 'Manrope', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 flex flex-col justify-center items-center h-screen">
+  <div class="rounded-xl bg-gray-600 flex flex-col justify-center text-center mx-16">
+    <div class="manrope text-sm text-green-400 tracking-wide pt-8">ADVICE #<span id="adviceNumber"></span></div>
+    <div class="text-white manrope text-lg px-8 pb-6 pt-6  font-semibold tracking-wide md:text-xl" id="adviceText">
+    </div>
+    <img src="./images/pattern-divider-mobile.svg" class="pb-14 px-4 lg:hidden">
+    <img src="./images/pattern-divider-desktop.svg" class="pb-14 px-4 hidden lg:block">
+
+  </div>
+  <div class="relative p-4 rounded-full bg-green-400 -mt-8">
+    <img id="diceIcon" src="./images/icon-dice.svg" class="md:w-12 md:h-auto cursor-pointer">
+  </div>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    function fetchAdvice() {
+      const apiURL = 'https://api.adviceslip.com/advice'; // Replace this with your API endpoint URL
+
+      axios.get(apiURL)
+        .then(response => {
+          const data = response.data;
+
+          // Update advice number and text in the HTML
+          const adviceNumberElement = document.getElementById('adviceNumber');
+          const adviceTextElement = document.getElementById('adviceText');
+
+          adviceNumberElement.textContent = `${data.slip.id}`;
+          adviceTextElement.textContent = `"${data.slip.advice}"`;
+
+          // Stop spinning the dice icon after advice is fetched
+          diceIcon.classList.remove('spin');
+        })
+        .catch(error => console.error('Error fetching advice:', error));
+    }
+
+
+    const diceIcon = document.getElementById('diceIcon');
+    diceIcon.addEventListener('click', () => {
+
+      diceIcon.classList.add('spin');
+
+
+      setTimeout(fetchAdvice, 1000);
+    });
+
+
+    window.onload = fetchAdvice;
+  </script>
+
+  <style>
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Apply the spin animation when the 'spin' class is added to the dice icon */
+    .spin {
+      animation: spin 1s linear infinite;
+    }
+  </style>
+</body>
+
+</html>
