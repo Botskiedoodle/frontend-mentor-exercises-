@@ -38,167 +38,209 @@
   <!-- header -->
   <header class="grid">
     <div class="relative">
-      <img src="./images/mobile/image-hero.jpg" class="w-full h-auto md:hidden">
-      <img src="./images/desktop/image-hero.jpg" class="w-full h-auto hidden md:block">
+      <div class="bg-black">
+        <img src="./images/mobile/image-hero.jpg" class="w-full h-auto md:hidden opacity-80">
+        <img src="./images/desktop/image-hero.jpg" class="w-full h-auto hidden md:block opacity-80">
+      </div>
+
       <div class="absolute top-0 left-0 w-full h-full">
-        <div class="flex justify-between p-8 lg:p-16 lg:px-40">
-          <div class="alata text-white text-3xl font-semibold">loopstudios</div>
+        <div class="flex justify-between p-8 lg:p-16 2xl:px-64 xl:px-40 lg:px-20">
+          <div class="alata text-white text-4xl font-semibold">loopstudios</div>
           <img src="./images/icon-hamburger.svg" class="lg:hidden hamburger-icon">
-          <div class="hidden lg:flex lg:gap-12 lg:items-center">
+          <div class="hidden lg:flex lg:gap-12 lg:items-center text-lg">
             <div class="text-white alata">About</div>
             <div class="text-white alata">Careers</div>
             <div class="text-white alata">Events</div>
-            <div class="text-white barlalataow">Products</div>
+            <div class="text-white alata">Products</div>
             <div class="text-white alata">Support</div>
           </div>
         </div>
-        <div class="josefin text-white border-2 p-8 m-8 text-4xl font-thin">
-          IMMERSIVE EXPERIENCES THAT DELIVER
+        <div class="flex h-full items-center -mt-20">
+          <div class="josefin p-8 text-white border-2 m-8 items-center text-4xl font-thin
+          md:text-5xl  md:w-[10em]
+          lg:text-6xl  lg:ml-20
+          xl:ml-40
+          2xl:text-8xl 2xl:w-[9em] 2xl:ml-60">
+            IMMERSIVE EXPERIENCES THAT DELIVER
+          </div>
         </div>
+
       </div>
     </div>
   </header>
-  <section class="mt-8 flex flex-col items-center">
-    <div>
-      <img src="./images/mobile/image-interactive.jpg" alt="interactive" class="p-6">
-    </div>
-    <div class="text-center py-4">
-      <div class="josefin text-3xl text-zinc-600 mt-4">
-        THE LEADER IN INTERACTIVE VR
+  <!-- container for horizontal margins -->
+  <div class="lg:mx-64">
+    <section class="mt-8 flex flex-col items-center 
+    2xl:flex-row
+    2xl:mt-24">
+      <div>
+        <img src="./images/mobile/image-interactive.jpg" alt="interactive" class="p-6 2xl:hidden">
+        <img src="./images/desktop/image-interactive.jpg" alt="interactive"
+          class="p-6 hidden 2xl:block 2xl:relative 2xl:z-0">
       </div>
-      <div class="alata mt-4 text-zinc-500 px-10">
-        Founded in 2011, Loopstudios has been producing world-class virtual reality projects for
-        some of the best companies around the globe. Our award-winning creations have transformed businesses
-        through digital experiences that bind to their brand.
+      <div
+        class="text-center py-4 2xl:text-left 2xl:p-12 2xl:w-[40em] tracking-widest bg-white 2xl:relative 2xl:z-1  2xl:right-[12em] 2xl:top-[8em] 2xl:my-8">
+        <div class="josefin text-3xl text-zinc-600 mt-4 2xl:text-4xl">
+          THE LEADER IN INTERACTIVE VR
+        </div>
+        <div class="alata mt-4 text-zinc-500 px-10 2xl:px-0">
+          Founded in 2011, Loopstudios has been producing world-class virtual reality projects for
+          some of the best companies around the globe. Our award-winning creations have transformed businesses
+          through digital experiences that bind to their brand.
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="my-12">
-    <div class="josefin text-3xl text-zinc-600 text-center pb-6">
-      OUR CREATIONS
-    </div>
-    <div class="flex flex-col items-center px-6">
-      <div class="grid py-2">
-        <div class="relative">
-          <div class="bg-gradient-to-r from-gray-900 to-transparent">
-            <img src="./images/mobile/image-deep-earth.jpg" alt="arcade" class="mix-blend-overlay">
+    </section>
+
+    <section class="my-12">
+      <div class="text-center xl:mt-24 font-thin xl:flex xl:justify-between xl:my-12 xl:mx-4">
+        <div class="josefin text-3xl text-zinc-600 lg:text-4xl">
+          OUR CREATIONS
+        </div>
+        <div
+          class="josefin py-2 px-12 border-2 border-gray-900 flex items-center tracking-[.25em] text-black hidden xl:block">
+          SEE ALL
+        </div>
+      </div>
+      <div class="flex flex-col items-center px-6 xl:flex-row xl:gap-4 xl:flex-wrap xl:justify-center">
+        <!-- <div class="flex flex-col items-center px-6 xl:grid xl:grid-cols-4 xl:gap-2 xl:mx-64 xl:px-28"> -->
+        <div class="grid py-2">
+          <div class="relative">
+            <div class="bg-gradient-to-r xl:bg-gradient-to-t from-gray-900 to-transparent">
+              <img src="./images/mobile/image-deep-earth.jpg" alt="arcade" class="mix-blend-overlay xl:hidden">
+              <img src="./images/desktop/image-deep-earth.jpg" alt="arcade" class="mix-blend-overlay hidden xl:block">
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full">
+              <div class="josefin text-white px-6 pt-12 xl:pt-[12em] text-3xl/8 font-thin w-44">DEEP EARTH</div>
+            </div>
           </div>
-          <div class="absolute top-0 left-0 w-full h-full">
-            <div class="text-white px-6 pt-12 text-2xl/6 font-thin w-12">DEEP EARTH</div>
+        </div>
+        <div class="grid py-2">
+          <div class="relative">
+            <div class="bg-gradient-to-r xl:bg-gradient-to-t from-gray-900 to-transparent">
+              <img src="./images/mobile/image-night-arcade.jpg" alt="arcade" class="mix-blend-overlay xl:hidden">
+              <img src="./images/desktop/image-night-arcade.jpg" alt="arcade" class="mix-blend-overlay hidden xl:block">
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full">
+              <div class="josefin text-white px-6 pt-12 xl:pt-[12em] text-3xl/8 font-thin w-44">NIGHT ARCADE</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid py-2">
+          <div class="relative">
+            <div class="bg-gradient-to-r xl:bg-gradient-to-t from-gray-900 to-transparent">
+              <img src="./images/mobile/image-soccer-team.jpg" alt="arcade" class="mix-blend-overlay xl:hidden">
+              <img src="./images/desktop/image-soccer-team.jpg" alt="arcade" class="mix-blend-overlay hidden xl:block">
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full">
+              <div class="josefin text-white px-6 pt-12 xl:pt-[12em] text-3xl/8 font-thin w-48">SOCCER TEAM VR</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid py-2">
+          <div class="relative">
+            <div class="bg-gradient-to-r xl:bg-gradient-to-t from-gray-900 to-transparent">
+              <img src="./images/mobile/image-grid.jpg" alt="arcade" class="mix-blend-overlay xl:hidden">
+              <img src="./images/desktop/image-grid.jpg" alt="arcade" class="mix-blend-overlay hidden xl:block">
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full">
+              <div class="josefin text-white px-6 pt-12 xl:pt-[12em] text-3xl/8 font-thin w-44">THE GRID</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid py-2">
+          <div class="relative">
+            <div class="bg-gradient-to-r xl:bg-gradient-to-t from-gray-900 to-transparent">
+              <img src="./images/mobile/image-from-above.jpg" alt="arcade" class="mix-blend-overlay xl:hidden">
+              <img src="./images/desktop/image-from-above.jpg" alt="arcade" class="mix-blend-overlay hidden xl:block">
+
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full">
+              <div class="josefin text-white px-6 pt-12 xl:pt-[12em] text-3xl/8 font-thin w-52">FROM UP ABOVE VR</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid py-2">
+          <div class="relative">
+            <div class="bg-gradient-to-r xl:bg-gradient-to-t from-gray-900 to-transparent">
+              <img src="./images/mobile/image-pocket-borealis.jpg" alt="arcade" class="mix-blend-overlay xl:hidden">
+              <img src="./images/desktop/image-pocket-borealis.jpg" alt="arcade"
+                class="mix-blend-overlay hidden xl:block">
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full">
+              <div class="josefin text-white px-6 xl:pt-[12em] pt-12 text-3xl/8 font-thin w-52">POCKET BOREALIS</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid py-2">
+          <div class="relative">
+            <div class="bg-gradient-to-r xl:bg-gradient-to-t from-gray-900 to-transparent">
+              <img src="./images/mobile/image-curiosity.jpg" alt="arcade" class="mix-blend-overlay xl:hidden">
+              <img src="./images/desktop/image-curiosity.jpg" alt="arcade" class="mix-blend-overlay hidden xl:block">
+
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full">
+              <div class="josefin text-white px-6 pt-12 xl:pt-[12em] text-3xl/8 font-thin w-52">THE CURIOSITY</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid py-2">
+          <div class="relative">
+            <div class="bg-gradient-to-r xl:bg-gradient-to-t from-gray-900 to-transparent">
+              <img src="./images/mobile/image-fisheye.jpg" alt="arcade" class="mix-blend-overlay xl:hidden">
+              <img src="./images/desktop/image-fisheye.jpg" alt="arcade" class="mix-blend-overlay hidden xl:block">
+
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full">
+              <div class="josefin text-white px-6 pt-12 xl:pt-[12em] text-3xl/8 font-thin w-52">MAKE IT FISHEYE</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="grid py-2">
-        <div class="relative">
-          <div class="bg-gradient-to-r from-gray-900 to-transparent">
-            <img src="./images/mobile/image-night-arcade.jpg" alt="arcade" class="mix-blend-overlay">
-          </div>
-          <div class="absolute top-0 left-0 w-full h-full">
-            <div class="text-white px-6 pt-12 text-2xl/6 font-thin w-12">NIGHT ARCADE</div>
-          </div>
-        </div>
-      </div>
-      <div class="grid py-2">
-        <div class="relative">
-          <div class="bg-gradient-to-r from-gray-900 to-transparent">
-            <img src="./images/mobile/image-soccer-team.jpg" alt="arcade" class="mix-blend-overlay">
-          </div>
-          <div class="absolute top-0 left-0 w-full h-full">
-            <div class="text-white px-6 pt-12 text-2xl/6 font-thin w-36">SOCCER TEAM VR</div>
-          </div>
-        </div>
-      </div>
-      <div class="grid py-2">
-        <div class="relative">
-          <div class="bg-gradient-to-r from-gray-900 to-transparent">
-            <img src="./images/mobile/image-grid.jpg" alt="arcade" class="mix-blend-overlay">
-          </div>
-          <div class="absolute top-0 left-0 w-full h-full">
-            <div class="text-white px-6 pt-12 text-2xl/6 font-thin w-36">THE GRID</div>
-          </div>
-        </div>
-      </div>
-      <div class="grid py-2">
-        <div class="relative">
-          <div class="bg-gradient-to-r from-gray-900 to-transparent">
-            <img src="./images/mobile/image-from-above.jpg" alt="arcade" class="mix-blend-overlay">
-          </div>
-          <div class="absolute top-0 left-0 w-full h-full">
-            <div class="text-white px-6 pt-12 text-2xl/6 font-thin w-40">FROM UP ABOVE VR</div>
-          </div>
-        </div>
-      </div>
-      <div class="grid py-2">
-        <div class="relative">
-          <div class="bg-gradient-to-r from-gray-900 to-transparent">
-            <img src="./images/mobile/image-pocket-borealis.jpg" alt="arcade" class="mix-blend-overlay">
-          </div>
-          <div class="absolute top-0 left-0 w-full h-full">
-            <div class="text-white px-6 pt-12 text-2xl/6 font-thin w-36">POCKET BOREALIS</div>
-          </div>
-        </div>
-      </div>
-      <div class="grid py-2">
-        <div class="relative">
-          <div class="bg-gradient-to-r from-gray-900 to-transparent">
-            <img src="./images/mobile/image-curiosity.jpg" alt="arcade" class="mix-blend-overlay">
-          </div>
-          <div class="absolute top-0 left-0 w-full h-full">
-            <div class="text-white px-6 pt-12 text-2xl/6 font-thin w-36">THE CURIOSITY</div>
-          </div>
-        </div>
-      </div>
-      <div class="grid py-2">
-        <div class="relative">
-          <div class="bg-gradient-to-r from-gray-900 to-transparent">
-            <img src="./images/mobile/image-fisheye.jpg" alt="arcade" class="mix-blend-overlay">
-          </div>
-          <div class="absolute top-0 left-0 w-full h-full">
-            <div class="text-white px-6 pt-12 text-2xl/6 font-thin w-36">MAKE IT FISHEYE</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="">
-    SEE ALL
+    </section>
   </div>
 
-  <!-- About
-  Careers
-  Events
-  Products
-  Support
 
-  Immersive experiences that deliver
 
-  The leader in interactive VR
 
-  Founded in 2011, Loopstudios has been producing world-class virtual reality 
-  projects for some of the best companies around the globe. Our award-winning 
-  creations have transformed businesses through digital experiences that bind 
-  to their brand.
+  <div class="flex justify-center mb-28 xl:hidden">
+    <div class="josefin py-2 px-12 border-2 border-gray-900 flex items-center tracking-[.25em] text-black ">
+      SEE ALL
+    </div>
+  </div>
+  <footer class="bg-black">
+    <div class="flex flex-col items-center text-white lg:flex-row lg:justify-between lg:mx-28 md:py-12">
+      <div class="lg:flex flex-col gap-6 py-4">
+        <div class="alata text-white text-3xl font-semibold py-8 lg:p-0">loopstudios</div>
+        <div class="flex flex-col items-center gap-6 josefin lg:flex-row">
+          <div>
+            About
+          </div>
+          <div>
+            Careers
+          </div>
+          <div>
+            Events
+          </div>
+          <div>
+            Products
+          </div>
+          <div>
+            Support
+          </div>
+        </div>
+      </div>
 
-  Our creations
-
-  See all
-
-  Deep earth
-  Night arcade
-  Soccer team VR
-  The grid
-  From up above VR
-  Pocket borealis
-  The curiosity
-  Make it fisheye
-
-  About
-  Careers
-  Events
-  Products
-  Support
-
-  © 2021 Loopstudios. All rights reserved. -->
+      <div class="flex flex-col items-center lg:items-end pt-8 lg:p-0">
+        <div class="flex gap-6 lg:pt-9">
+          <img src="./images/icon-facebook.svg" alt="peysbuk">
+          <img src="./images/icon-twitter.svg" alt="ebon">
+          <img src="./images/icon-pinterest.svg" alt="pnamaybilog">
+          <img src="./images/icon-instagram.svg" alt="kodakan">
+        </div>
+        <div class="py-5 josefin font-thin text-neutral-400 text-lg">© 2021 Loopstudios. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
 
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
