@@ -1,0 +1,52 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
+
+/* primary */
+.dark-blue {
+  color: hsl(233, 26%, 24%);
+}
+
+.lime-green {
+  color: hsl(136, 65%, 51%);
+}
+
+.bright-cyan {
+  color: hsl(192, 70%, 51% );
+}
+
+/* Neutral */
+
+.grayish-blue {
+  color: hsl(233, 8%, 62%);
+}
+
+.light-grayish-blue {
+  color: hsl(220, 16%, 96%);
+}
+
+.very-light-gray {
+  color: hsl(0, 0%, 98%);
+}
+
+
+.very-light-gray-bg {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.hero-background-desktop {
+  width: 400px;
+  height: auto;
+}
+
+.image {
+ float:left;
+ width:400px;
+ height:auto;
+}
+
+
+
