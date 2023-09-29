@@ -1,16 +1,16 @@
 function Navigation() {
   return (
     <div className='lg:flex flex-row hidden gap-12 items-center grayish-blue'>
-      <div>
+      <div className="cursor-pointer">
         Home
       </div>
-      <div>
+      <div className="cursor-pointer">
         About
       </div>
-      <div>
+      <div className="cursor-pointer">
         Contact
       </div>
-      <div>
+      <div className="cursor-pointer">
         Blog
       </div>
       <div>

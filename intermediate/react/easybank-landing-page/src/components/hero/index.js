@@ -3,40 +3,40 @@ import HeroBackgroundMobile from '../../assets/bg-intro-mobile.svg'
 import Button from '../global/button'
 import HeroBackgroundDesktop from '../../assets/bg-intro-desktop.svg'
 
-
 function hero() {
   return (
-    <div>
-      <div className='lg:hidden'>
+    <div className='lg:px-24'>
+      <div className='lg:hidden w-100 flex justify-center'>
         <img src={HeroBackgroundMobile} alt="" className='w-screen absolute z-15 -mt-10' />
-        <div className='absolute -mt-44 z-5 w-screen flex justify-center contain-fit'>
+        <div className='absolute -mt-44 z-5 w-100 flex justify-center'>
           <img src={HeroImage} alt="" />
         </div>
       </div>
-      <div className='hidden lg:flex flex-row text-left h-screen items-center -mt-28 overflow-x-hidden justify-center'>
-        <div className='left-64'>
-          <div className='flex flex-col w-[40em] p-8 gap-6'>
-            <div className='dark-blue text-7xl'>
-              Next generation digital banking
-            </div>
-            <div className='grayish-blue'>
-              Take your financial life online. Your Easybank account will be a one-stop-shop for spending,
-              saving, budgeting, investing, and much more.
-            </div>
-            <div>
-              <Button>Request Invite</Button>
-            </div>
-          </div>
 
+      <div className='hidden lg:flex flex-row h-screen w-100 '>
+        <div className='flex flex-col gap-6 my-32' >
+          <div className='dark-blue text-6xl w-[8em] '>
+            Next generation <br /> digital banking
+          </div>
+          <div className='w-96'>
+            Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving,
+            budgeting, investing, and much more.
+          </div>
+          <div>
+            <Button>Request Invite</Button>
+          </div>
         </div>
-        <div className='relative bottom-24 left-64' >
-          <img src={HeroBackgroundDesktop} alt="" className='hero-background-desktop' />
-        </div>
-        <div className='absolute left-[64em]'>
-          <img src={HeroImage} alt="" className='image' />
+        <div className='' >
+          <img src={HeroBackgroundDesktop} alt="" />
         </div>
       </div>
 
+      {/* <div className='hidden lg:block absolute top-0'>
+
+        <div className=''>
+          <img src={HeroImage} alt="" />
+        </div>
+      </div> */}
     </div>
   )
 }
