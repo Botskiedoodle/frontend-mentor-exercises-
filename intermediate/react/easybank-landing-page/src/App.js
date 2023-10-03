@@ -1,14 +1,16 @@
 
 import Header from './components/header'
 import Hero from './components/hero'
+import Main from './components/body'
+import Footer from './components/footer'
+
 function App() {
   return (
-    <div className="App ">
+    <div className="App">
       <Header />
       <Hero />
-      {/* <div className="dark-blue text-8xl very-light-gray-bg h-screen">
-        Hello
-      </div> */}
+      <Main />
+      <Footer />
     </div>
   );
 }

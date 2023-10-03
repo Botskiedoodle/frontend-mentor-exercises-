@@ -12,7 +12,10 @@ function header() {
       <img src={EasyBankLogo} alt='easybank logo' className="object-contain pl-4 lg:p-0" />
       <Navigation />
       <img src={HamburgerLogo} className='pr-4 lg:hidden' alt='hamburger' />
-      <Button >Request Invite</Button>
+      <div className='hidden lg:block'>
+        <Button>Request Invite</Button>
+      </div>
+
     </div>
   )
 }
