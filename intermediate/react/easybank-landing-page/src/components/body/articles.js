@@ -8,10 +8,10 @@ import ConfettiImg from '../../assets/image-confetti.jpg'
 function Article({ image, author, title, text }) {
   return (
     <div className='rounded-lg bg-white text-left'>
-      <div >
-        <img src={image} alt={title} className='rounded-t-lg' />
+      <div>
+        <img src={image} alt={title} className='rounded-t-lg w-screen ' />
       </div>
-      <div className='flex flex-col gap-4 p-10'>
+      <div className='flex flex-col gap-4 p-6'>
         <div className='text-xs grayish-blue'>
           By {author}
         </div>
@@ -61,17 +61,29 @@ const articleList = [
   }
 ]
 
-function articles() {
-  const listItems = articleList.map(article =>
-    <Article
-      key={article.id}
-      image={article.image}
-      title={article.title}
-      author={article.author}
-      text={article.text}
-    />
+function Articles() {
+  return (
+    <div className='lg:text-left bg-white lg:px-32 px-8'>
+      <div className="dark-blue text-4xl py-8">
+        Latest Articles
+      </div>
+      <div className='lg:flex lg:flex-row  lg:gap-8 '>
+        {articleList.map(article =>
+          <Article
+            key={article.id}
+            image={article.image}
+            title={article.title}
+            author={article.author}
+            text={article.text}
+          />
+        )}
+      </div>
+
+
+    </div>
   )
-  return listItems
+
+
 }
 
-export default articles
+export default Articles

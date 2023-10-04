@@ -45,15 +45,27 @@ const featureList = [
 ]
 
 function features() {
-  const listItems = featureList.map(feature =>
-    <Feature
-      key={feature.id}
-      title={feature.title}
-      image={feature.image}
-      text={feature.text}
-    />
+  return (
+    <div className='light-grayish-blue-bg w-100 lg:px-32 px-8'>
+      <div className="dark-blue text-4xl py-8">Why choose Easybank?</div>
+      <div className="grayish-blue">
+        We leverage Open Banking to turn your bank account into your financial hub.
+        Control your finances like never before.
+      </div>
+      {featureList.map(feature =>
+        <Feature
+          key={feature.id}
+          title={feature.title}
+          image={feature.image}
+          text={feature.text}
+        />
+      )}
+    </div>
+
   )
-  return listItems
+
+
+
 }
 
 export default features
