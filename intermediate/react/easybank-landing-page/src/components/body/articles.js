@@ -63,11 +63,11 @@ const articleList = [
 
 function Articles() {
   return (
-    <div className='lg:text-left bg-white lg:px-32 px-8'>
+    <div className='lg:text-left very-light-gray-bg lg:px-32 px-8 pb-8'>
       <div className="dark-blue text-4xl py-8">
         Latest Articles
       </div>
-      <div className='lg:flex lg:flex-row  lg:gap-8 '>
+      <div className='flex flex-col lg:flex-row gap-6 '>
         {articleList.map(article =>
           <Article
             key={article.id}

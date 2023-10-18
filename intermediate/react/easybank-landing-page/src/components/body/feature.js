@@ -5,7 +5,7 @@ import OpenAPIImg from '../../assets/icon-api.svg'
 
 function Feature({ image, title, text }) {
   return (
-    <div className="flex flex-col items-center gap-6 py-8">
+    <div className="flex flex-col items-center gap-6 py-8 lg:items-start lg:py-16 ">
       <img src={image} alt={title} />
       <div className="dar-blue text-2xl">
         {title}
@@ -46,20 +46,25 @@ const featureList = [
 
 function features() {
   return (
-    <div className='light-grayish-blue-bg w-100 lg:px-32 px-8'>
-      <div className="dark-blue text-4xl py-8">Why choose Easybank?</div>
-      <div className="grayish-blue">
-        We leverage Open Banking to turn your bank account into your financial hub.
-        Control your finances like never before.
+    <div className='light-grayish-blue-bg w-100 lg:px-32 px-8 '>
+      <div className='lg:text-left w-full lg:w-[36em]'>
+        <div className="dark-blue text-4xl py-8">Why choose Easybank?</div>
+        <div className="grayish-blue ">
+          We leverage Open Banking to turn your bank account into your financial hub.
+          Control your finances like never before.
+        </div>
       </div>
-      {featureList.map(feature =>
-        <Feature
-          key={feature.id}
-          title={feature.title}
-          image={feature.image}
-          text={feature.text}
-        />
-      )}
+
+      <div className='lg:flex lg:flex-row lg:text-left lg:gap-16'>
+        {featureList.map(feature =>
+          <Feature
+            key={feature.id}
+            title={feature.title}
+            image={feature.image}
+            text={feature.text}
+          />
+        )}
+      </div>
     </div>
 
   )
