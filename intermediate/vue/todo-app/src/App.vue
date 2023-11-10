@@ -1,44 +1,71 @@
 <template>
-  <div class="flex justify-center bg-contain bg-no-repeat bg-gray-900"
-    style="background-image: url('./src/assets/bg-mobile-dark.jpg');">
-    <div class=" flex flex-col w-[26em]">
-      <header class="text-3xl py-8 font-bold text-white">TODO</header>
+  <div class="flex justify-center h-100 transition ease-in-out duration-500"
+    :class="isDarkMode ? 'bg-gray-900' : 'bg-slate-300'">
+
+    <img v-if="isDarkMode" class="absolute w-screen lg:hidden" src="./assets/bg-mobile-dark.jpg" alt="" />
+    <img v-if="isDarkMode" class="absolute w-screen lg:block hidden" src="./assets/bg-desktop-dark.jpg" alt="" />
+
+
+    <img v-if="!isDarkMode" class="absolute w-screen lg:hidden" src="./assets/bg-mobile-light.jpg" alt="" />
+    <img v-if="!isDarkMode" class="absolute w-screen lg:block hidden" src="./assets/bg-desktop-light.jpg" alt="" />
+
+
+    <div class="flex flex-col w-[40em] z-10 px-8">
+      <div class="flex justify-between py-8 ">
+        <header class="text-3xl font-bold text-white tracking-[.25em]">TODO</header>
+        <div class="cursor-pointer" @click="changeMode">
+          <transition name="fade" mode="out-in">
+            <img v-if="isDarkMode" src="./assets/icon-sun.svg" alt="">
+            <img v-else src="./assets/icon-moon.svg" alt="">
+          </transition>
+        </div>
+      </div>
+
       <div>
-        <div id="input-box" class="box-color p-6 rounded-lg flex items-center gap-4">
+        <div id="input-box" class="transition ease-in-out duration-500 p-6 rounded-lg flex items-center gap-4 shadow-lg"
+          :class="isDarkMode ? 'box-color' : 'bg-slate-200'">
           <div class="w-6 h-6 border-solid border-2 box-circle rounded-full  flex  items-center justify-center">
-            <!-- <img src="./assets/icon-check.svg" alt=""> -->
           </div>
           <input type="text" v-model="inputNewTask" placeholder="Create a new todo..." @keyup.enter="addTask"
-            class="box-color text-white outline-none">
+            class="text-white outline-none transition ease-in-out duration-500"
+            :class="isDarkMode ? 'box-color' : 'bg-slate-200 text-slate-500'">
         </div>
-        <div class="mt-4 rounded-lg box-color">
-
+        <div class="mt-4 rounded-lg shadow-lg transition ease-in-out duration-500"
+          :class="isDarkMode ? 'box-color text-white' : 'bg-slate-200'">
           <div v-if="tasks.length">
-
-            <draggable v-model="tasks" tag="div" :itemKey="task => task.id">
+            <draggable v-model="tasks" tag="div" :itemKey="task => task.id" v-bind="dragOptions" @start="drag = true"
+              @end="drag = false">
               <template #item="{ element: task }">
-                <div class="p-6 flex items-center text-white cursor-pointer task justify-between" v-if="filterItem(task)">
-                  <div class="flex gap-4 " @click="toggleComplete(task.id)">
-                    <div class="w-6 h-6 border-solid border-2 box-circle rounded-full flex items-center justify-center"
-                      :class="{ 'check-bg': task.completed }">
-                      <img v-if="task.completed" src="./assets/icon-check.svg" alt="">
+                <transition name="fade" mode="out-in">
+                  <div class="p-6 flex items-center  cursor-pointer task justify-between" v-if="filterItem(task)">
+                    <div class="flex gap-4 " @click="toggleComplete(task.id)">
+                      <div class="w-6 h-6 border-solid border-2 box-circle rounded-full flex items-center justify-center "
+                        :class="{ 'check-bg': task.completed }">
+                        <img v-if="task.completed" src="./assets/icon-check.svg" alt="">
+                      </div>
+                      <div class="transition ease-in-out duration-100"
+                        :class="{ 'completed secondary-font-color ': task.completed }">
+                        {{ task.text }}
+                      </div>
                     </div>
-                    <div :class="{ 'completed secondary-font-color ': task.completed }">
-                      {{ task.text }}
+                    <div @click="clearTask(task.id)">
+                      <img src="./assets/icon-cross.svg" alt="">
                     </div>
                   </div>
-                  <div @click="clearTask(task.id)">
-                    <img src="./assets/icon-cross.svg" alt="">
-                  </div>
-                </div>
+                </transition>
               </template>
             </draggable>
-
+            <div v-if="filterCriteria === 'completed' && checkForCompleted" class="p-6 task secondary-font-color">
+              You haven't completed any task you lazy bish
+            </div>
+            <div v-if="filterCriteria === 'active' && !checkForActive" class="p-6 task secondary-font-color">
+              Congratulations! You don't have any active tasks.
+            </div>
             <div class="flex p-6 justify-between task secondary-font-color">
               <div>
                 {{ tasks.length }} items left
               </div>
-              <div class="cursor-pointer" @click="clearCompeted()">
+              <div class="cursor-pointer" @click="clearCompeted">
                 Clear Completed
               </div>
             </div>
@@ -47,13 +74,15 @@
             You currently have no tasks pending.
           </div>
         </div>
-        <div class="mt-4 box-color secondary-font-color p-6 rounded-lg flex justify-center gap-6  font-bold">
+        <div
+          class="mt-4 secondary-font-color p-6 rounded-lg flex justify-center gap-6  font-bold transition ease-in-out duration-500 shadow-lg"
+          :class="isDarkMode ? 'box-color' : 'bg-slate-200'">
           <button @click="setFilter('all')" :class="{ 'active-filter': filterCriteria === 'all' }">All</button>
           <button @click="setFilter('active')" :disabled="!checkForActive"
             :class="[{ 'active-filter': filterCriteria === 'active' }, { 'cursor-not-allowed': !checkForActive }]">
             Active</button>
-          <button @click="setFilter('completed')" :disabled="checkForCompleted"
-            :class="[{ 'active-filter': filterCriteria === 'completed' }, { 'cursor-not-allowed': checkForCompleted }]">Completed</button>
+          <button @click="setFilter('completed')"
+            :class="{ 'active-filter': filterCriteria === 'completed' }">Completed</button>
         </div>
       </div>
       <div class="py-8 text-center secondary-font-color font-bold">
@@ -67,6 +96,18 @@
 <script setup>
 import { ref, computed } from 'vue'
 import draggable from 'vuedraggable'
+const dragOptions = computed(() => {
+  return {
+    animation: 200,
+    group: "description",
+    disabled: false,
+    ghostClass: "ghost"
+  }
+})
+const isDarkMode = ref(true)
+const changeMode = () => {
+  isDarkMode.value = !isDarkMode.value
+}
 const setFilter = (filter) => {
   filterCriteria.value = filter
 }
@@ -197,4 +238,28 @@ const filterCriteria = ref('all')
 .secondary-font-color {
   color: #5D5F7E;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.bg-mobile-dark {
+  background-image: url('./assets/bg-mobile-dark.jpg');
+}
+
+.bg-desktop-dark {
+  background-image: url('./assets/bg-desktop-dark.jpg');
+}
+
+/* .ghost {
+  opacity: 0.5;
+  background: #c8ebfb;
+} */
 </style>
