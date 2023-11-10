@@ -2,12 +2,15 @@
   <div class="flex justify-center h-100 transition ease-in-out duration-500"
     :class="isDarkMode ? 'bg-gray-900' : 'bg-slate-300'">
 
-    <img v-if="isDarkMode" class="absolute w-screen lg:hidden" src="./assets/bg-mobile-dark.jpg" alt="" />
-    <img v-if="isDarkMode" class="absolute w-screen lg:block hidden" src="./assets/bg-desktop-dark.jpg" alt="" />
+    <template v-if="isDarkMode">
+      <img class="absolute w-screen lg:hidden" src="./assets/bg-mobile-dark.jpg" alt="" />
+      <img class="absolute w-screen lg:block hidden" src="./assets/bg-desktop-dark.jpg" alt="" />
+    </template>
+    <template v-else>
+      <img class="absolute w-screen lg:hidden" src="./assets/bg-mobile-light.jpg" alt="" />
+      <img class="absolute w-screen lg:block hidden" src="./assets/bg-desktop-light.jpg" alt="" />
+    </template>
 
-
-    <img v-if="!isDarkMode" class="absolute w-screen lg:hidden" src="./assets/bg-mobile-light.jpg" alt="" />
-    <img v-if="!isDarkMode" class="absolute w-screen lg:block hidden" src="./assets/bg-desktop-light.jpg" alt="" />
 
 
     <div class="flex flex-col w-[40em] z-10 px-8">
@@ -78,8 +81,7 @@
           class="mt-4 secondary-font-color p-6 rounded-lg flex justify-center gap-6  font-bold transition ease-in-out duration-500 shadow-lg"
           :class="isDarkMode ? 'box-color' : 'bg-slate-200'">
           <button @click="setFilter('all')" :class="{ 'active-filter': filterCriteria === 'all' }">All</button>
-          <button @click="setFilter('active')" :disabled="!checkForActive"
-            :class="[{ 'active-filter': filterCriteria === 'active' }, { 'cursor-not-allowed': !checkForActive }]">
+          <button @click="setFilter('active')" :class="{ 'active-filter': filterCriteria === 'active' }">
             Active</button>
           <button @click="setFilter('completed')"
             :class="{ 'active-filter': filterCriteria === 'completed' }">Completed</button>
